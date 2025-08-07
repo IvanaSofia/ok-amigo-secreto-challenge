@@ -1,6 +1,7 @@
-//Array para guardar los nombres de amigos
-const amigos = [];
 
+//Array para guardar los nombres de amigos
+let amigos = [];
+//función para agregar amigos
 function agregarAmigo() {
     //  Capturar el valor del input
     const input = document.getElementById("amigo");
@@ -43,10 +44,20 @@ function sortearAmigo() {
     // Generar un índice aleatorio
     const indiceAleatorio = Math.floor(Math.random() * amigos.length);
 
-    // Obtener el nombre en ese índice
-    const amigoSorteado = amigos[indiceAleatorio];
+
+    // Obtener y eliminar el nombre sorteado
+    const amigoSorteado = amigos.splice(indiceAleatorio, 1)[0];
 
     //  Mostrar el resultado en el HTML
     const resultado = document.getElementById("resultado");
-    resultado.innerHTML = `<li>🎉 El amigo sorteado es: <strong>${amigoSorteado}</strong></li>`;
+     const item = document.createElement("li");
+    item.innerHTML = `🎉 El amigo sorteado es: <strong>${amigoSorteado}</strong>`;
+    resultado.appendChild(item);
+
+    // Si ya no quedan más amigos, mostrar alerta
+    if (amigos.length === 0) {
+        alert("Todos los amigos fueron sorteados.");
+    }
 }
+
+
