@@ -32,3 +32,21 @@ function agregarAmigo() {
 
 
 }
+
+function sortearAmigo() {
+    //  Validar que haya al menos un amigo en la lista
+    if (amigos.length === 0) {
+        alert("Agregá al menos un amigo para sortear.");
+        return;
+    }
+
+    // Generar un índice aleatorio
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+
+    // Obtener el nombre en ese índice
+    const amigoSorteado = amigos[indiceAleatorio];
+
+    //  Mostrar el resultado en el HTML
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = `<li>🎉 El amigo sorteado es: <strong>${amigoSorteado}</strong></li>`;
+}
