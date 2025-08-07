@@ -23,4 +23,6 @@ function agregarAmigo() {
 
     // 5. Limpiar el campo de entrada
     input.value = "";
+
+
 }
