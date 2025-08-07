@@ -54,6 +54,18 @@ function sortearAmigo() {
     item.innerHTML = `🎉 El amigo sorteado es: <strong>${amigoSorteado}</strong>`;
     resultado.appendChild(item);
 
+    // Eliminar el <li> correspondiente de la lista visual
+    const lista = document.getElementById("listaAmigos");
+    const items = lista.getElementsByTagName("li");
+
+    for (let i = 0; i < items.length; i++) {
+        if (items[i].textContent === amigoSorteado) {
+            lista.removeChild(items[i]);
+            break; // solo uno coincide, así que salimos del bucle
+        }
+    }
+
+
     // Si ya no quedan más amigos, mostrar alerta
     if (amigos.length === 0) {
         alert("Todos los amigos fueron sorteados.");
