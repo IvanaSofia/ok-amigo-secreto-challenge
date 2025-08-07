@@ -1,4 +1,4 @@
-/ Array para guardar los nombres de amigos
+//Array para guardar los nombres de amigos
 const amigos = [];
 
 function agregarAmigo() {
